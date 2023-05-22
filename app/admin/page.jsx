@@ -4,202 +4,221 @@ function Admin() {
   return (
     <div className="admin-panel">
       <div className='w-[100%]'>
-        <h1 className='text-center'>Admin Dasboard</h1>
+        <h1 className='text-center text-6xl py-6'>Admin Dasboard</h1>
       </div>
       <div >
         <form action="">
           <div className='grid grid-cols-4 p-4 gap-4'>
             <div className="relative z-0 w-full mb-6 group">
               <input
-                type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
+                type="text"
+                name="name"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="ex: Mytoken"
               />
               <label
                 for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Public Mint Price
+                Name
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
                 type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
+                name="price"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="0.1 ..."
               />
               <label
                 for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Public Mint Price
+                Re Sale Price
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
                 type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
+                name="collectionSize"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="10000"
               />
               <label
                 for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Public Mint Price
+                Collection Size
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
-                type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
+                type="text"
+                name="discordLink"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="http://"
               />
               <label
                 for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Public Mint Price
+                Discord Link
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
-                type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
+                type="text"
+                name="openseaLink"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="http://"
               />
               <label
                 for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Public Mint Price
+                OpenSea Link
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
-                type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
+                type="text"
+                name="twitterLink"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="http://"
               />
               <label
                 for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Public Mint Price
+                Twitter Link
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <input
-                type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
+                type="text"
+                name="telegramLink"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="http://"
               />
               <label
                 for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Public Mint Price
+                Telegram Link
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
-              <input
-                type="number"
-                name="publicMintPrice"
-                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-white  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
-                placeholder="0.1.."
-              />
-              <label
-                for="floating_first_name"
-                className="peer-focus:font-medium absolute text-base text-[#cccccc]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              <select
+                name="chains"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
               >
-                Public Mint Price
-              </label>
+                <option value="">Please Select Network</option>
+                <option value="ethereum">Ethereum</option>
+                <option value="polygon">Polygon</option>
+                <option value="solana">Solana</option>
+                <option value="cardano">Cardano</option>
+              </select>
             </div>
-            <div>
-              <label
-                className="block mb-2 text-sm font-medium text-white dark:text-white"
-                for="file_input"
-              >
-                Upload Image or Video(.mp4)
-              </label>
-              <input
-                className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-[#cccccc] border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
-                id="file_input"
-                type="file"
-                name='image'
 
-                accept="image/*,video/*"
-              />
-            </div>
-            <div>
-              <label
-                className="block mb-2 text-sm font-medium text-white dark:text-white"
-                for="file_input"
-              >
-                Upload Image or Video(.mp4)
-              </label>
-              <input
-                className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-[#cccccc] border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
-                id="file_input"
-                type="file"
-                name='image'
+            <div className="relative z-0 w-full mb-6 group">
+              <textarea
+                type="text"
+                name="description"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="write a description about the project..."
+                cols={10}
+                rows={10}
 
-                accept="image/*,video/*"
               />
-            </div>
-            <div>
               <label
-                className="block mb-2 text-sm font-medium text-white dark:text-white"
-                for="file_input"
+                for="floating_first_name"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
-                Upload Image or Video(.mp4)
+                Description
               </label>
-              <input
-                className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-[#cccccc] border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
-                id="file_input"
-                type="file"
-                name='image'
+            </div>
 
-                accept="image/*,video/*"
-              />
-            </div>
             <div>
-              <label
-                className="block mb-2 text-sm font-medium text-white dark:text-white"
-                for="file_input"
-              >
-                Upload Image or Video(.mp4)
-              </label>
-              <input
-                className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-[#cccccc] border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
-                id="file_input"
-                type="file"
-                name='image'
-                accept="image/*,video/*"
-              />
+              <div>
+                <label
+                  className="block mb-2 text-sm font-medium text-black dark:text-black"
+                  for="file_input"
+                >
+                  Upload Main Image
+                </label>
+                <input
+                  className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-black border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
+                  id="file_input"
+                  type="file"
+                  name='mainImage'
+
+                  accept="image/*,video/*"
+                />
+              </div>
+              <div>
+                <label
+                  className="block mb-2 text-sm font-medium text-black dark:text-black"
+                  for="file_input"
+                >
+                  Upload Image 1
+                </label>
+                <input
+                  className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-black border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
+                  id="file_input"
+                  type="file"
+                  name='image1'
+
+                  accept="image/*,video/*"
+                />
+              </div>
+              <div>
+                <label
+                  className="block mb-2 text-sm font-medium text-black dark:text-black"
+                  for="file_input"
+                >
+                  Upload Image 2
+                </label>
+                <input
+                  className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-black border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
+                  id="file_input"
+                  type="file"
+                  name='image2'
+
+                  accept="image/*,video/*"
+                />
+              </div>
+              <div>
+                <label
+                  className="block mb-2 text-sm font-medium text-black dark:text-black"
+                  for="file_input"
+                >
+                  Upload Image 3
+                </label>
+                <input
+                  className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-black border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
+                  id="file_input"
+                  type="file"
+                  name='image3'
+                  accept="image/*,video/*"
+                />
+              </div>
+              <div>
+                <label
+                  className="block mb-2 text-sm font-medium text-black dark:text-black"
+                  for="file_input"
+                >
+                  Upload Logo
+                </label>
+                <input
+                  className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-black border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
+                  id="file_input"
+                  type="file"
+                  name='logo'
+                  accept="image/*,video/*"
+                />
+              </div>
             </div>
-            <div>
-              <label
-                className="block mb-2 text-sm font-medium text-white dark:text-white"
-                for="file_input"
-              >
-                Upload Image or Video(.mp4)
-              </label>
-              <input
-                className="placeholder-transparent focus:placeholder-gray-500 block w-full text-base text-[#cccccc] border border-[#cccccc] rounded-lg cursor-pointer  focus:outline-none"
-                id="file_input"
-                type="file"
-                name='image'
-                accept="image/*,video/*"
-              />
-            </div>
-          
+
           </div>
         </form>
       </div>
