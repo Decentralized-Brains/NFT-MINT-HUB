@@ -1,13 +1,26 @@
 import mongoose from "mongoose";
 
 
-const connectDataBase = async (handler) =>{
-    if(mongoose.connections[0].readyState){
-        return handler(req,res);
+let isConnected = false
+export const connectToDB = async () => {
+    mongoose.set('strictQuery', true);
+  
+    if(isConnected) {
+      console.log('MongoDB is already connected');
+      return;
     }
 
-    await mongoose.connect(process.env.MONGODB_URL)
-    return handler(req,res);
-}
-
-export default connectDataBase;
+    try {
+      await mongoose.connect('mongodb+srv://alfazsozib:whWLSQmiL5qjC7KV@mint.opmiy5n.mongodb.net/?retryWrites=true&w=majority', {
+        dbName: "mintHub",
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
+  
+      isConnected = true;
+  
+      console.log('MongoDB connected')
+    } catch (error) {
+      console.log(error);
+    }
+  }

@@ -1,4 +1,4 @@
-import mongoose, { Schema, model } from "mongoose";
+import mongoose, { Schema, model, models } from "mongoose";
 
 const CollectionShema = new Schema({
     name:{
@@ -42,5 +42,5 @@ const CollectionShema = new Schema({
     }
 })
 
-const CollectionModel = mongoose.model("collection", CollectionShema);
+const CollectionModel = models.collection || mongoose.model("collection", CollectionShema);
 export default CollectionModel;

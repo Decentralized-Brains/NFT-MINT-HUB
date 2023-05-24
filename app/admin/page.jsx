@@ -1,6 +1,10 @@
+'use client'
 import React from 'react'
 
 function Admin() {
+  const handeSubmit = (event) => {
+    console.log(event.target.value)
+  }
   return (
     <div className="admin-panel">
       <div className='w-[100%]'>
@@ -15,9 +19,10 @@ function Admin() {
                 name="name"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="ex: Mytoken"
+                onChange={handeSubmit}
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Name
@@ -29,9 +34,10 @@ function Admin() {
                 name="price"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="0.1 ..."
+                onChange={handeSubmit}
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Re Sale Price
@@ -43,9 +49,10 @@ function Admin() {
                 name="collectionSize"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="10000"
+                onChange={handeSubmit}
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Collection Size
@@ -57,9 +64,10 @@ function Admin() {
                 name="discordLink"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="http://"
+                onChange={handeSubmit}
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Discord Link
@@ -71,9 +79,10 @@ function Admin() {
                 name="openseaLink"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="http://"
+                onChange={handeSubmit}
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 OpenSea Link
@@ -85,9 +94,10 @@ function Admin() {
                 name="twitterLink"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="http://"
+                onChange={handeSubmit}
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Twitter Link
@@ -99,9 +109,10 @@ function Admin() {
                 name="telegramLink"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="http://"
+                onChange={handeSubmit}
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Telegram Link
@@ -109,6 +120,7 @@ function Admin() {
             </div>
             <div className="relative z-0 w-full mb-6 group">
               <select
+                onChange={handeSubmit}
                 name="chains"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
               >
@@ -128,10 +140,11 @@ function Admin() {
                 placeholder="write a description about the project..."
                 cols={10}
                 rows={10}
+                onChange={handeSubmit}
 
               />
               <label
-                for="floating_first_name"
+                htmlFor="floating_first_name"
                 className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
               >
                 Description
@@ -142,7 +155,7 @@ function Admin() {
               <div>
                 <label
                   className="block mb-2 text-sm font-medium text-black dark:text-black"
-                  for="file_input"
+                  htmlFor="file_input"
                 >
                   Upload Main Image
                 </label>
@@ -158,7 +171,7 @@ function Admin() {
               <div>
                 <label
                   className="block mb-2 text-sm font-medium text-black dark:text-black"
-                  for="file_input"
+                  htmlFor="file_input"
                 >
                   Upload Image 1
                 </label>
@@ -174,7 +187,7 @@ function Admin() {
               <div>
                 <label
                   className="block mb-2 text-sm font-medium text-black dark:text-black"
-                  for="file_input"
+                  htmlFor="file_input"
                 >
                   Upload Image 2
                 </label>
@@ -190,7 +203,7 @@ function Admin() {
               <div>
                 <label
                   className="block mb-2 text-sm font-medium text-black dark:text-black"
-                  for="file_input"
+                  htmlFor="file_input"
                 >
                   Upload Image 3
                 </label>
@@ -205,7 +218,7 @@ function Admin() {
               <div>
                 <label
                   className="block mb-2 text-sm font-medium text-black dark:text-black"
-                  for="file_input"
+                  htmlFor="file_input"
                 >
                   Upload Logo
                 </label>
@@ -218,7 +231,6 @@ function Admin() {
                 />
               </div>
             </div>
-
           </div>
         </form>
       </div>
