@@ -2,7 +2,10 @@ import React from "react";
 import { chainsData } from "@/components/Data";
 import Image from "next/image";
 
-const Sidebar = () => {
+const Sidebar = ({setFilterOption}) => {
+  const getFilter=(event)=>{
+    setFilterOption(event.target.value)
+  }
   return (
     <div className="glassmorphism w-full h-full">
       <section className="p-2 ">
@@ -14,6 +17,8 @@ const Sidebar = () => {
                 id={items.name}
                 name={items.name}
                 value={items.name}
+                onChange={getFilter}
+             
               />
               <div className="flex">
                 <Image src={items.img} className="w-6 h-6 mx-3 " />

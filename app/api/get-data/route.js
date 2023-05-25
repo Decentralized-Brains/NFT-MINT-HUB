@@ -12,29 +12,30 @@ export const config = {
 
 
 export const POST = async (request, res) => {
-  const procesDate=(sDate, eDate)=>{
 
+  const procesDate=(sDate, eDate)=>{
     // process startDate 
     let procDate = new Date(sDate)
-    var options = { month: 'long' };
-    var smonthName = procDate.toLocaleString('en-US', options);
-    var sday = procDate.getDate();
-    var syear = procDate.getFullYear();
+    let options = { month: 'long' };
+    let smonthName = procDate.toLocaleString('en-US', options);
+    let sday = procDate.getDate();
+    let syear = procDate.getFullYear();
 
     // process endDate 
     let procEDate = new Date(eDate)
-    var options = { month: 'long' };
-    var emonthName = procEDate.toLocaleString('en-US', options);
-    var eday = procEDate.getDate();
-    var eyear = procEDate.getFullYear();
+    options = { month: 'long' };
+    let emonthName = procEDate.toLocaleString('en-US', options);
+    let eday = procEDate.getDate();
+    let eyear = procEDate.getFullYear();
 
     let endDate = emonthName+" "+eday+" "+eyear
     let startDate = smonthName+" "+sday+" "+syear
-
     return { startDate, endDate }
 
   }
 
+
+  
   try {
     await connectToDB()
     const response = await request.formData()

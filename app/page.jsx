@@ -1,16 +1,21 @@
+"use client"
 import TopFilter from "../components/TopFilter";
 import Card from "../components/Card";
 import Sidebar from "@components/Sidebar";
+import { useState } from "react";
+
 
 const Home = () => {
+  const [filterOption, setFilterOption] = useState(null)
+  
   return (
     <div className="container flex flex-col md:flex-row mt-5">
       <div className="w-full md:w-1/4">
-        <Sidebar />
+        <Sidebar setFilterOption={setFilterOption}/>
       </div>
       <div className="md:ml-2 w-full">
         <TopFilter />
-        <Card />
+        <Card filterOption={filterOption}/>
       </div>
     </div>
   );
