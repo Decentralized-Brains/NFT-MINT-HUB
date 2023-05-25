@@ -1,6 +1,6 @@
 import { connectToDB } from "@middleware/connectDB.js";
 import Collection from "@models/tokens";
-import path from "path";
+
 
 
 export const config = {
@@ -10,7 +10,30 @@ export const config = {
 }
 
 
+
 export const POST = async (request, res) => {
+  const procesDate=(sDate, eDate)=>{
+
+    // process startDate 
+    let procDate = new Date(sDate)
+    var options = { month: 'long' };
+    var smonthName = procDate.toLocaleString('en-US', options);
+    var sday = procDate.getDate();
+    var syear = procDate.getFullYear();
+
+    // process endDate 
+    let procEDate = new Date(eDate)
+    var options = { month: 'long' };
+    var emonthName = procEDate.toLocaleString('en-US', options);
+    var eday = procEDate.getDate();
+    var eyear = procEDate.getFullYear();
+
+    let endDate = emonthName+" "+eday+" "+eyear
+    let startDate = smonthName+" "+sday+" "+syear
+
+    return { startDate, endDate }
+
+  }
 
   try {
     await connectToDB()
@@ -22,8 +45,9 @@ export const POST = async (request, res) => {
     let image3 = response.get("image3")
     let name = response.get("name")
     let description = response.get("description")
-    let startDate = response.get("startDate")
-    let endDate = response.get("endDate")
+    let sDate = response.get("startDate")
+    let eDate = response.get("endDate")
+    let dateResult = procesDate(sDate,eDate)
     let platform = response.get("platform")
     let mintPrice = response.get("mintPrice")
     let reSalePrice = response.get("reSalePrice")
@@ -67,8 +91,8 @@ export const POST = async (request, res) => {
     const saveDataToDataBase ={
       name,
       description,
-      startDate,
-      endDate,
+      startDate:dateResult.startDate,
+      endDate:dateResult.endDate,
       platform,
       mintPrice,
       reSalePrice,

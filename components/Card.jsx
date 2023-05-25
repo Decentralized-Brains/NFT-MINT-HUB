@@ -19,9 +19,12 @@ const Card = () => {
 
     
   }
+
+  console.log(socialsData[0]['img']['src'])
   useEffect(()=>{
     getAllCollection()
   },[])
+  
   return (
     <div className="glassmorphism w-full  my-5 ">
       {tokens? tokens.map((item, index)=>
@@ -55,15 +58,40 @@ const Card = () => {
             </p>
           </div>
 
-          {/* <div className="flex gap-3 items-center">
+
+          <div className="flex gap-3 items-center">
           <Image
-            src={""}
+            src={socialsData[0]['img']['src']}
             alt={''}
             width={25}
             height={25}
             className="object-cover"
           />
-          </div> */}
+          <Image
+            src={socialsData[1]['img']['src']}
+            alt={''}
+            width={25}
+            height={25}
+            className="object-cover"
+          />
+          <Image
+            src={socialsData[2]['img']['src']}
+            alt={''}
+            width={25}
+            height={25}
+            className="object-cover"
+          />
+           <Image
+            
+            src={socialsData[3]['img']['src']}
+            alt={''}
+            width={25}
+            height={25}
+            className="object-cover"
+          />
+          </div>
+        
+
 
         </div>
 
