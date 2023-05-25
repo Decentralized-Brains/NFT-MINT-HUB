@@ -11,12 +11,6 @@ const Home = () => {
       <div className="md:ml-2 w-full">
         <TopFilter />
         <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
       </div>
     </div>
   );

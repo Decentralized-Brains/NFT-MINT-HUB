@@ -1,10 +1,81 @@
 'use client'
 import React from 'react'
+import { useState } from 'react'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 
 function Admin() {
+  const [inputs, setInputs] = useState(null);
+  const [file, setFile]  = useState(null);
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  const handlePhotos = (event) => {
+    const name = event.target.name
+    setFile({ ...file, [name]: event.target.files[0] });
+  }
+
   const handeSubmit = (event) => {
     console.log(event.target.value)
+    const name = event.target.name;
+    const value = event.target.value
+    setInputs({...inputs, [name]:value})
   }
+
+  const postData=async(event)=>{
+    try {
+      const formData = new FormData()
+      formData.append("name",inputs.name)
+      formData.append("description",inputs.description)
+      formData.append("startDate",inputs.startDate)
+      formData.append("endDate",inputs.endDate)
+      formData.append("platform",inputs.platform)
+      formData.append("mintPrice",inputs.mintPrice)
+      formData.append("reSalePrice",inputs.reSaleprice)
+      formData.append("collectionSize",inputs.collectionSize)
+      formData.append("website",inputs.website)
+      formData.append("discordLink",inputs.discordLink)
+      formData.append("twitterLink",inputs.twitterLink)
+      formData.append("telegramLink",inputs.telegramLink)
+      formData.append("logo",file.logo)
+      formData.append("mainImage",file.mainImage)
+      formData.append("image1",file.image1)
+      formData.append("image2",file.image2)
+      formData.append("image3",file.image3)
+      
+
+      const response = await fetch("/api/get-data", {
+        method: "POST",
+        body:formData
+        // body: JSON.stringify({
+          // name:inputs.name,
+          // description:inputs.description,
+          // startDate:startDate, 
+          // endDate:endDate,
+          // platform:inputs.platform, 
+          // mintPrice:inputs.mintPrice,
+          // reSaleprice: inputs.reSaleprice,
+          // collectionSize:inputs.collectionSize,
+          // website:inputs.website,
+          // discordLink:inputs.discordLink,
+          // twitterLink:inputs.twitterLink,
+          // telegramLink:inputs.telegramLink,
+          // openSeaLink:inputs.openSeaLink,
+          // logo:file.logo,
+          // mainImage:file.mainImage,
+          // image1:file.image1,
+          // image2:file.image2,
+          // image3:file.image3
+        // }),
+      });
+      console.log(response)
+    } catch (error) {
+      console.log(error);
+  }
+}
+
   return (
     <div className="admin-panel">
       <div className='w-[100%]'>
@@ -31,7 +102,22 @@ function Admin() {
             <div className="relative z-0 w-full mb-6 group">
               <input
                 type="number"
-                name="price"
+                name="mintPrice"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="0.1 ..."
+                onChange={handeSubmit}
+              />
+              <label
+                htmlFor="floating_first_name"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Mint Price
+              </label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input
+                type="number"
+                name="reSalePrice"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="0.1 ..."
                 onChange={handeSubmit}
@@ -61,6 +147,21 @@ function Admin() {
             <div className="relative z-0 w-full mb-6 group">
               <input
                 type="text"
+                name="website"
+                className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
+                placeholder="http://"
+                onChange={handeSubmit}
+              />
+              <label
+                htmlFor="floating_first_name"
+                className="peer-focus:font-medium absolute text-base text-black  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#FCC607] peer-focus:dark:text-[#FCC607] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >
+                Website
+              </label>
+            </div>
+            <div className="relative z-0 w-full mb-6 group">
+              <input
+                type="text"
                 name="discordLink"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="http://"
@@ -76,7 +177,7 @@ function Admin() {
             <div className="relative z-0 w-full mb-6 group">
               <input
                 type="text"
-                name="openseaLink"
+                name="openSeaLink"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
                 placeholder="http://"
                 onChange={handeSubmit}
@@ -119,9 +220,17 @@ function Admin() {
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
+             <DatePicker name='startDate' selected={startDate} onChange={(date) => setStartDate(date)} />
+            </div>
+
+            <div className="relative z-0 w-full mb-6 group">
+             <DatePicker name='endDate' selected={endDate} onChange={(date) => setEndDate(date)} />
+            </div>
+      
+            <div className="relative z-0 w-full mb-6 group">
               <select
                 onChange={handeSubmit}
-                name="chains"
+                name="platform"
                 className="placeholder-transparent focus:placeholder-gray-500 block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-[#cccccc] appearance-none dark:text-black  dark:focus:border-[#FCC607] focus:outline-none focus:ring-0 focus:border-[#FCC607] peer"
               >
                 <option value="">Please Select Network</option>
@@ -164,7 +273,7 @@ function Admin() {
                   id="file_input"
                   type="file"
                   name='mainImage'
-
+                  onChange={handlePhotos}
                   accept="image/*,video/*"
                 />
               </div>
@@ -180,7 +289,7 @@ function Admin() {
                   id="file_input"
                   type="file"
                   name='image1'
-
+                  onChange={handlePhotos}
                   accept="image/*,video/*"
                 />
               </div>
@@ -196,7 +305,7 @@ function Admin() {
                   id="file_input"
                   type="file"
                   name='image2'
-
+                  onChange={handlePhotos}
                   accept="image/*,video/*"
                 />
               </div>
@@ -212,6 +321,7 @@ function Admin() {
                   id="file_input"
                   type="file"
                   name='image3'
+                  onChange={handlePhotos}
                   accept="image/*,video/*"
                 />
               </div>
@@ -227,12 +337,17 @@ function Admin() {
                   id="file_input"
                   type="file"
                   name='logo'
+                  onChange={handlePhotos}
                   accept="image/*,video/*"
                 />
               </div>
             </div>
           </div>
+          
         </form>
+        <div>
+          <button type='button' onClick={postData}>Sumbit</button>
+          </div>
       </div>
       <div>
       </div>

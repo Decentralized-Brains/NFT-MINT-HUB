@@ -7,6 +7,7 @@ const CollectionShema = new Schema({
     description: {
         type: String,
     },
+    
     startDate: {
         type: String
     },
@@ -25,6 +26,18 @@ const CollectionShema = new Schema({
     collectionSize: {
         type: Number 
     },
+    descordLink:{
+        type: String  
+    },
+    openSeaLink:{
+        type: String  
+    },
+    telegramLink:{
+        type: String  
+    },
+    twitterLink:{
+        type: String  
+    },
     logo: {
         type: String
     },
@@ -42,5 +55,6 @@ const CollectionShema = new Schema({
     }
 })
 
-const CollectionModel = models.collection || mongoose.model("collection", CollectionShema);
-export default CollectionModel;
+const Collection = models.Collection || mongoose.model("Collection", CollectionShema);
+
+export default Collection;
