@@ -6,6 +6,7 @@ import CardLogo from "/public/assets/cardimg/logo.png";
 import { socialsData } from "./Data";
 import C1 from "public/assets/cardimg/1.png";
 import { useState } from "react";
+import Link from "next/link";
 
 const Card = () => {
   const [tokens, setTokens] = useState(null);
@@ -27,7 +28,7 @@ const Card = () => {
       <div className="flex flex-col lg:flex-row justify-between gap-5">
         <div className="md:w-1/3">
           <Image
-            src={CardLogo}
+            src={item?.logo}
             alt="NFT Store Logo"
             width={200}
             height={200}
@@ -54,7 +55,7 @@ const Card = () => {
             </p>
           </div>
 
-          <div className="flex gap-3 items-center">
+          {/* <div className="flex gap-3 items-center">
           <Image
             src={""}
             alt={''}
@@ -62,7 +63,7 @@ const Card = () => {
             height={25}
             className="object-cover"
           />
-          </div>
+          </div> */}
 
         </div>
 
@@ -70,10 +71,11 @@ const Card = () => {
           <p className="mb-3">
             {item?.description}
           </p>
-
-          <a href={item?.website} className="text-white bg-blue-400 px-3 py-1.5 rounded-lg ">
+          <Link href={item?.website} target="_blank">
+          <p className="text-white bg-blue-400 px-3 py-1.5 rounded-lg ">
             Visit site
-          </a>
+          </p>
+          </Link>
         </div>
 
         <div className="grid grid-cols-3 grid-rows-3 gap-2 place-items-center">

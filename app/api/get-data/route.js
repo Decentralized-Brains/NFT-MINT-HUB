@@ -3,24 +3,91 @@ import Collection from "@models/tokens";
 import path from "path";
 
 
-export const config ={
-    api:{
-        bodyParser:false,
-    }
+export const config = {
+  api: {
+    bodyParser: false,
+  }
 }
 
 
+export const POST = async (request, res) => {
 
-export const POST = async (request,res) => {
-    
   try {
+    await connectToDB()
     const response = await request.formData()
-    const image = response.get("mainImage")
-    const b = await image.arrayBuffer();
-    const buff = Buffer.from(b);
-    const base64 = buff.toString('base64')
-    console.log(`data:image/jpeg;base64,${base64}`)
-    return new Response(JSON.stringify({name:""}), { status: 200 });
+    let mainImage = response.get("mainImage")
+    let logo = response.get("logo")
+    let image1 = response.get("image1")
+    let image2 = response.get("image2")
+    let image3 = response.get("image3")
+    let name = response.get("name")
+    let description = response.get("description")
+    let startDate = response.get("startDate")
+    let endDate = response.get("endDate")
+    let platform = response.get("platform")
+    let mintPrice = response.get("mintPrice")
+    let reSalePrice = response.get("reSalePrice")
+    let collectionSize = response.get("collectionSize")
+    let website = response.get("website")
+    let discordLink = response.get("discordLink")
+    let twitterLink = response.get("twitterLink")
+    let telegramLink = response.get("telegramLink")
+    let openSeaLink = response.get("openSeaLink")
+
+    if (mainImage) {
+      const b = await mainImage.arrayBuffer();
+      const buff = Buffer.from(b);
+      const base64 = buff.toString('base64')
+      mainImage = `data:image/jpeg;base64,${base64}`
+    }
+    if (logo) {
+      const b = await logo.arrayBuffer();
+      const base64 = Buffer.from(b).toString('base64')
+      logo = `data:image/jpeg;base64,${base64}`
+    }
+    if (image1) {
+      const b = await image1.arrayBuffer();
+      const buff = Buffer.from(b);
+      const base64 = buff.toString('base64')
+      image1 = `data:image/jpeg;base64,${base64}`
+    }
+    if (image2) {
+      const b = await image2.arrayBuffer();
+      const buff = Buffer.from(b);
+      const base64 = buff.toString('base64')
+      image2 = `data:image/jpeg;base64,${base64}`
+    }
+    if (image3) {
+      const b = await image3.arrayBuffer();
+      const buff = Buffer.from(b);
+      const base64 = buff.toString('base64')
+      image3 = `data:image/jpeg;base64,${base64}`
+    }
+
+    const saveDataToDataBase ={
+      name,
+      description,
+      startDate,
+      endDate,
+      platform,
+      mintPrice,
+      reSalePrice,
+      collectionSize,
+      website,
+      discordLink,
+      twitterLink,
+      telegramLink,
+      openSeaLink,
+      mainImage,
+      logo,
+      image1,
+      image2,
+      image3
+    }
+    const dd =  new Collection(saveDataToDataBase)
+    await dd.save();
+    console.log("Data Saved!!!!")
+    return new Response({ status: 200 });
   } catch (error) {
     console.log(error);
   }

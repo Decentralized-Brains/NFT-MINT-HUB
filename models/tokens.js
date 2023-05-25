@@ -38,6 +38,9 @@ const CollectionShema = new Schema({
     twitterLink:{
         type: String  
     },
+    website:{
+        type: String
+    },
     logo: {
         type: String
     },

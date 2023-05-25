@@ -12,6 +12,8 @@ function Admin() {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
+
+
   const handlePhotos = (event) => {
     const name = event.target.name
     setFile({ ...file, [name]: event.target.files[0] });
@@ -29,49 +31,30 @@ function Admin() {
       const formData = new FormData()
       formData.append("name",inputs.name)
       formData.append("description",inputs.description)
-      formData.append("startDate",inputs.startDate)
-      formData.append("endDate",inputs.endDate)
+      formData.append("startDate",startDate)
+      formData.append("endDate",endDate)
       formData.append("platform",inputs.platform)
       formData.append("mintPrice",inputs.mintPrice)
-      formData.append("reSalePrice",inputs.reSaleprice)
+      formData.append("reSalePrice",inputs.reSalePrice)
       formData.append("collectionSize",inputs.collectionSize)
       formData.append("website",inputs.website)
       formData.append("discordLink",inputs.discordLink)
       formData.append("twitterLink",inputs.twitterLink)
       formData.append("telegramLink",inputs.telegramLink)
+      formData.append("openSeaLink",inputs.openSeaLink)
       formData.append("logo",file.logo)
       formData.append("mainImage",file.mainImage)
       formData.append("image1",file.image1)
       formData.append("image2",file.image2)
       formData.append("image3",file.image3)
-      console.log(file)
+      console.log(formData)
       
 
       const response = await fetch("/api/get-data", {
         method: "POST",
         body:formData
-        // body: JSON.stringify({
-          // name:inputs.name,
-          // description:inputs.description,
-          // startDate:startDate, 
-          // endDate:endDate,
-          // platform:inputs.platform, 
-          // mintPrice:inputs.mintPrice,
-          // reSaleprice: inputs.reSaleprice,
-          // collectionSize:inputs.collectionSize,
-          // website:inputs.website,
-          // discordLink:inputs.discordLink,
-          // twitterLink:inputs.twitterLink,
-          // telegramLink:inputs.telegramLink,
-          // openSeaLink:inputs.openSeaLink,
-          // logo:file.logo,
-          // mainImage:file.mainImage,
-          // image1:file.image1,
-          // image2:file.image2,
-          // image3:file.image3
-        // }),
       });
-      console.log(response)
+      console.log(await response.json())
     } catch (error) {
       console.log(error);
   }
@@ -221,11 +204,11 @@ function Admin() {
               </label>
             </div>
             <div className="relative z-0 w-full mb-6 group">
-             <DatePicker name='startDate' selected={startDate} onChange={(date) => setStartDate(date)} />
+             <DatePicker name='startDate' selected={startDate} onChange={(sdate) => setStartDate(sdate)} />
             </div>
 
             <div className="relative z-0 w-full mb-6 group">
-             <DatePicker name='endDate' selected={endDate} onChange={(date) => setEndDate(date)} />
+             <DatePicker name='endDate' selected={endDate} onChange={(edate) => setEndDate(edate)} />
             </div>
       
             <div className="relative z-0 w-full mb-6 group">
