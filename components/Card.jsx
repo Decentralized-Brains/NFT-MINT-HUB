@@ -8,30 +8,36 @@ import Link from "next/link";
 
 const Card = ({filterOption}) => {
   const [tokens, setTokens] = useState(null);
-console.log(filterOption)
   const getAllCollection = async () => {
+    console.log(filterOption)
     const response = await fetch("api/send-data", { method: "GET" })
     const result = await response.json()    
     console.log(result)
-    const filteredTokens = result.filter(item => item.platform === filterOption.toLowerCase());
-    setTokens(filteredTokens)
-    console.log(tokens)
-  }
+    if(filterOption!==null){
+      const filteredTokens = result.filter(item => item.platform === filterOption.toLowerCase());
+      setTokens(filteredTokens)
+      console.log("called")
+    }else{
+      setTokens(result)
+    }
+    
+    console.log("called Outside")
+}
 
-
-
-  
-  useEffect(() => {
+useEffect(() => {
     getAllCollection()
-  }, [filterOption])
+}, [filterOption])
 
  
 
   return (
+    <>
+    {tokens ? tokens.map((item, index) =>
+      
     <div className="glassmorphism w-full  my-5 ">
-      {tokens ? tokens.map((item, index) =>
+      
         <div className="flex flex-col lg:flex-row justify-between gap-5">
-          <div className="md:w-1/3">
+          <div className="md:w-1/2">
             <Image
               src={item?.logo}
               alt="NFT Store Logo"
@@ -61,37 +67,45 @@ console.log(filterOption)
             </div>
 
             <div className="flex gap-3 items-center">
+              <Link href={item?.discordLink} target="_blank">
               <Image
                 src={socialsData[0]['img']['src']}
-                alt={''}
+                alt={'discord'}
                 width={25}
                 height={25}
                 className="object-cover"
               />
+              </Link>
+              <Link href={item?.openSeaLink} target="_blank">
               <Image
                 src={socialsData[1]['img']['src']}
-                alt={''}
+                alt={'opensea'}
                 width={25}
                 height={25}
                 className="object-cover"
               />
+              </Link>
+              <Link href={item?.twitterLink} target="_blank">
               <Image
                 src={socialsData[2]['img']['src']}
-                alt={''}
+                alt={'twitter'}
                 width={25}
                 height={25}
                 className="object-cover"
               />
+              </Link>
+
+              <Link href={item?.telegramLink} target="_blank">
               <Image
-
                 src={socialsData[3]['img']['src']}
-                alt={''}
+                alt={'telegram'}
                 width={25}
                 height={25}
                 className="object-cover"
               />
+              </Link>
             </div>
-
+            
           </div>
 
           <div>
@@ -99,7 +113,7 @@ console.log(filterOption)
               {item?.description}
             </p>
             <Link href={item?.website} target="_blank">
-              <p className="text-white bg-blue-400 px-3 py-1.5 rounded-lg ">
+              <p className="text-white w-24 text-center bg-blue-400 px-3 py-1.5 rounded-lg ">
                 Visit site
               </p>
             </Link>
@@ -144,9 +158,12 @@ console.log(filterOption)
             </div>
           </div>
         </div>
-      )
-        : null}
+     
     </div>
+   
+    )
+    : null}
+     </>
   );
 };
 

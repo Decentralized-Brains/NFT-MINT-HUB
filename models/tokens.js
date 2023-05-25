@@ -26,7 +26,7 @@ const CollectionShema = new Schema({
     collectionSize: {
         type: Number 
     },
-    descordLink:{
+    discordLink:{
         type: String  
     },
     openSeaLink:{
