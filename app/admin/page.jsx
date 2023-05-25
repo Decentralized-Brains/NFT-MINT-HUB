@@ -44,6 +44,7 @@ function Admin() {
       formData.append("image1",file.image1)
       formData.append("image2",file.image2)
       formData.append("image3",file.image3)
+      console.log(file)
       
 
       const response = await fetch("/api/get-data", {
