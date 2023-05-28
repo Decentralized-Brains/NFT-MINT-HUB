@@ -2,9 +2,20 @@ import React from "react";
 import { chainsData } from "@/components/Data";
 import Image from "next/image";
 
-const Sidebar = ({setFilterOption}) => {
+const Sidebar = ({setFilterOption, filterOption}) => {
   const getFilter=(event)=>{
-    setFilterOption(event.target.value)
+    let value = event.target.value.toLowerCase()
+    let isChecked = event.target.checked
+
+    if (isChecked) {
+      if (!filterOption.includes(value)) {
+        setFilterOption((prevValues) => [...prevValues, value]);
+      }
+    } else {
+      setFilterOption((prevValues) =>
+        prevValues.filter((val) => val !== value)
+      );
+    }
   }
   return (
     <div className="glassmorphism w-full h-full">

@@ -13,7 +13,7 @@ const Card = ({ filterOption }) => {
     const result = await response.json()
     console.log(result)
     if (filterOption !== null) {
-      const filteredTokens = result.filter(item => item.platform === filterOption.toLowerCase());
+      const filteredTokens = result.filter(item => filterOption.includes(item.platform));
       setTokens(filteredTokens)
     } else {
       setTokens(result)
