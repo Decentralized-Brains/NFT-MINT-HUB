@@ -7,7 +7,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const Card = ({ filterOption }) => {
-  const [tokens, setTokens] = useState(null);
+  const [tokens, setTokens] = useState();
   const getAllCollection = async () => {
     const response = await fetch("api/send-data", { method: "GET" })
     const result = await response.json()
@@ -15,7 +15,7 @@ const Card = ({ filterOption }) => {
     if (filterOption !== null) {
       const filteredTokens = result.filter(item => filterOption.includes(item.platform));
       setTokens(filteredTokens)
-    } else {
+    }else{
       setTokens(result)
     }
 
@@ -25,12 +25,11 @@ const Card = ({ filterOption }) => {
     getAllCollection()
   }, [filterOption])
 
-
+console.log(tokens)
 
   return (
     <>
       {tokens ? tokens.map((item, index) =>
-
         <div className="glassmorphism w-full  my-5 ">
 
           <div className="flex flex-col lg:flex-row justify-between gap-5">

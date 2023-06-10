@@ -11,7 +11,7 @@ function Admin() {
   const [file, setFile] = useState(null);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const [wallet, setWallet] = useState(null)
+  const [wallet, setWallet] = useState("0x551f387C994EF93d0D88d1ac8bD009Fd4f6e4Cf1")
   const adminWallet = "0x551f387C994EF93d0D88d1ac8bD009Fd4f6e4Cf1"
 
 

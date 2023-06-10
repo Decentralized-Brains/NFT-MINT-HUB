@@ -3,6 +3,8 @@ import { chainsData } from "@/components/Data";
 import Image from "next/image";
 
 const Sidebar = ({setFilterOption, filterOption}) => {
+
+  
   const getFilter=(event)=>{
     let value = event.target.value.toLowerCase()
     let isChecked = event.target.checked
@@ -17,6 +19,8 @@ const Sidebar = ({setFilterOption, filterOption}) => {
       );
     }
   }
+
+
   return (
     <div className="glassmorphism w-full h-full">
       <section className="p-2 ">

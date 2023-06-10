@@ -7,7 +7,6 @@ import { useState } from "react";
 
 const Home = () => {
   const [filterOption, setFilterOption] = useState([])
-  console.log(filterOption)
   
   return (
     <div className="container flex flex-col md:flex-row mt-5">
