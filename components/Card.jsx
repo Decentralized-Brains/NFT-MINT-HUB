@@ -12,7 +12,7 @@ const Card = ({ filterOption }) => {
     const response = await fetch("api/send-data", { method: "GET" })
     const result = await response.json()
     console.log(result)
-    if (filterOption !== null) {
+    if (filterOption.length) {
       const filteredTokens = result.filter(item => filterOption.includes(item.platform));
       setTokens(filteredTokens)
     }else{
