@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 const Home = () => {
-  const [filterOption, setFilterOption] = useState([])
+  const [filterOption, setFilterOption] = useState(["ethereum","polygon","solana","cardano"])
   
   return (
     <div className="container flex flex-col md:flex-row mt-5">
